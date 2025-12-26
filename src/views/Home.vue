@@ -113,12 +113,11 @@ const pillars = [
           <a href="https://www.syntonera.fr/on-era" class="path-card path-card--on stagger-item">
             <div class="path-visual">
               <div class="path-shapes path-shapes--on">
-                <span class="shape shape-center"></span>
-                <span class="shape shape-orbit shape-orbit-1"></span>
-                <span class="shape shape-orbit shape-orbit-2"></span>
-                <span class="shape shape-dot shape-dot-1"></span>
-                <span class="shape shape-dot shape-dot-2"></span>
-                <span class="shape shape-dot shape-dot-3"></span>
+                <svg class="shape shape-center" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#7a9576"/></svg>
+                <svg class="shape shape-orbit shape-orbit-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="none" stroke="rgba(138, 159, 134, 0.4)" stroke-width="2" stroke-dasharray="6,6"/></svg>
+                <svg class="shape shape-dot shape-dot-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(181, 196, 177, 0.9)"/></svg>
+                <svg class="shape shape-dot shape-dot-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(138, 159, 134, 0.8)"/></svg>
+                <svg class="shape shape-dot shape-dot-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(165, 183, 161, 0.75)"/></svg>
               </div>
             </div>
             <div class="path-content">
@@ -136,10 +135,10 @@ const pillars = [
           <a href="https://www.syntonera.fr/off-era" class="path-card path-card--off stagger-item">
             <div class="path-visual">
               <div class="path-shapes path-shapes--off">
-                <span class="shape shape-1"></span>
-                <span class="shape shape-2"></span>
-                <span class="shape shape-3"></span>
-                <span class="shape shape-4"></span>
+                <svg class="shape shape-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(232, 212, 196, 0.5)"/></svg>
+                <svg class="shape shape-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(212, 184, 150, 0.45)"/></svg>
+                <svg class="shape shape-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(168, 146, 125, 0.35)"/></svg>
+                <svg class="shape shape-4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(212, 184, 150, 0.3)"/></svg>
               </div>
             </div>
             <div class="path-content">
@@ -593,6 +592,7 @@ const pillars = [
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  contain: content;
 }
 
 /* Mobile: Compact vertical cards - both visible on screen */
@@ -612,14 +612,6 @@ const pillars = [
     width: 100px;
     height: 60px;
     isolation: isolate;
-  }
-
-  /* Force shapes to stay on GPU layer */
-  .path-shapes--off .shape,
-  .path-shapes--on .shape-dot,
-  .path-shapes--on .shape-center {
-    will-change: transform;
-    backface-visibility: hidden;
   }
 
   /* OFF-ERA: show only 2 shapes, smaller */
@@ -715,14 +707,12 @@ const pillars = [
 
 .path-shapes--off .shape {
   position: absolute;
-  border-radius: 50%;
   animation-play-state: paused;
 }
 
 .path-shapes--off .shape-1 {
   width: 80px;
   height: 80px;
-  background: rgba(232, 212, 196, 0.5);
   top: 10%;
   left: 10%;
   animation: off-float1 8s ease-in-out infinite;
@@ -731,7 +721,6 @@ const pillars = [
 .path-shapes--off .shape-2 {
   width: 60px;
   height: 60px;
-  background: rgba(212, 184, 150, 0.45);
   top: 40%;
   right: 5%;
   animation: off-float2 10s ease-in-out infinite;
@@ -740,7 +729,6 @@ const pillars = [
 .path-shapes--off .shape-3 {
   width: 50px;
   height: 50px;
-  background: rgba(168, 146, 125, 0.35);
   bottom: 5%;
   left: 25%;
   animation: off-float3 9s ease-in-out infinite;
@@ -749,7 +737,6 @@ const pillars = [
 .path-shapes--off .shape-4 {
   width: 35px;
   height: 35px;
-  background: rgba(212, 184, 150, 0.3);
   top: 25%;
   right: 25%;
   animation: off-float4 7s ease-in-out infinite;
@@ -769,8 +756,6 @@ const pillars = [
   transform: translate(-50%, -50%);
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  background: #7a9576;
 }
 
 .path-shapes--on .shape-orbit {
@@ -778,8 +763,6 @@ const pillars = [
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px dashed rgba(138, 159, 134, 0.4);
 }
 
 .path-shapes--on .shape-orbit-1 {
@@ -796,13 +779,11 @@ const pillars = [
   position: absolute;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
   animation-play-state: paused;
   transition: all var(--transition-gentle);
 }
 
 .path-shapes--on .shape-dot-1 {
-  background: rgba(181, 196, 177, 0.9);
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
@@ -810,14 +791,12 @@ const pillars = [
 }
 
 .path-shapes--on .shape-dot-2 {
-  background: rgba(138, 159, 134, 0.8);
   bottom: 15%;
   right: 10%;
   animation: on-orbit2 15s linear infinite;
 }
 
 .path-shapes--on .shape-dot-3 {
-  background: rgba(165, 183, 161, 0.75);
   bottom: 15%;
   left: 10%;
   animation: on-orbit3 10s linear infinite;
