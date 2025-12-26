@@ -612,29 +612,31 @@ const pillars = [
     height: 60px;
   }
 
-  /* OFF-ERA: show only 2 shapes, smaller */
+  /* OFF-ERA: static shapes, no animation */
+  .path-shapes--off .shape {
+    animation: none;
+  }
   .path-shapes--off .shape-1 {
-    width: 40px;
-    height: 40px;
-    top: 5%;
-    left: 15%;
-    animation-play-state: running;
-    animation-duration: 12s;
+    width: 35px;
+    height: 35px;
+    top: 10%;
+    left: 20%;
   }
   .path-shapes--off .shape-2 {
-    width: 30px;
-    height: 30px;
-    top: 20%;
-    right: 15%;
-    animation-play-state: running;
-    animation-duration: 15s;
+    width: 25px;
+    height: 25px;
+    top: 25%;
+    right: 25%;
   }
   .path-shapes--off .shape-3,
   .path-shapes--off .shape-4 {
     display: none;
   }
 
-  /* ON-ERA: center + orbit + 3 dots, all closer together */
+  /* ON-ERA: static shapes, no animation */
+  .path-shapes--on .shape-dot {
+    animation: none;
+  }
   .path-shapes--on .shape-center {
     width: 12px;
     height: 12px;
@@ -644,29 +646,26 @@ const pillars = [
     height: 40px;
   }
   .path-shapes--on .shape-orbit-2 {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
   }
   .path-shapes--on .shape-dot {
     width: 8px;
     height: 8px;
-    animation-play-state: running;
-    animation-duration: 18s;
   }
-  /* Reposition dots: left, top, right */
   .path-shapes--on .shape-dot-1 {
-    top: 15%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
   .path-shapes--on .shape-dot-2 {
     top: 50%;
-    right: 5%;
+    right: 10%;
     transform: translateY(-50%);
   }
   .path-shapes--on .shape-dot-3 {
     top: 50%;
-    left: 5%;
+    left: 10%;
     transform: translateY(-50%);
   }
 
