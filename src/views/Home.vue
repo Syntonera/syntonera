@@ -556,7 +556,7 @@ const pillars = [
 .path-shapes--off .shape-1 {
   width: 80px;
   height: 80px;
-  background: rgba(212, 184, 150, 0.4);
+  background: rgba(232, 212, 196, 0.5);
   top: 10%;
   left: 10%;
   animation: off-float1 8s ease-in-out infinite;
@@ -565,7 +565,7 @@ const pillars = [
 .path-shapes--off .shape-2 {
   width: 60px;
   height: 60px;
-  background: rgba(181, 196, 177, 0.35);
+  background: rgba(212, 184, 150, 0.45);
   top: 40%;
   right: 5%;
   animation: off-float2 10s ease-in-out infinite;
@@ -574,7 +574,7 @@ const pillars = [
 .path-shapes--off .shape-3 {
   width: 50px;
   height: 50px;
-  background: rgba(232, 212, 196, 0.45);
+  background: rgba(168, 146, 125, 0.35);
   bottom: 5%;
   left: 25%;
   animation: off-float3 9s ease-in-out infinite;
@@ -583,7 +583,7 @@ const pillars = [
 .path-shapes--off .shape-4 {
   width: 35px;
   height: 35px;
-  background: rgba(168, 146, 125, 0.25);
+  background: rgba(212, 184, 150, 0.3);
   top: 25%;
   right: 25%;
   animation: off-float4 7s ease-in-out infinite;
@@ -604,7 +604,7 @@ const pillars = [
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: #7a9576;
 }
 
 .path-shapes--on .shape-orbit {
@@ -613,7 +613,7 @@ const pillars = [
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px dashed rgba(61, 61, 61, 0.15);
+  border: 1px dashed rgba(138, 159, 134, 0.4);
 }
 
 .path-shapes--on .shape-orbit-1 {
@@ -636,7 +636,7 @@ const pillars = [
 }
 
 .path-shapes--on .shape-dot-1 {
-  background: rgba(181, 196, 177, 0.8);
+  background: rgba(181, 196, 177, 0.9);
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
@@ -644,25 +644,51 @@ const pillars = [
 }
 
 .path-shapes--on .shape-dot-2 {
-  background: rgba(212, 184, 150, 0.8);
+  background: rgba(138, 159, 134, 0.8);
   bottom: 15%;
   right: 10%;
   animation: on-orbit2 15s linear infinite;
 }
 
 .path-shapes--on .shape-dot-3 {
-  background: rgba(168, 146, 125, 0.7);
+  background: rgba(165, 183, 161, 0.75);
   bottom: 15%;
   left: 10%;
   animation: on-orbit3 10s linear infinite;
 }
 
+/* OFF-ERA: Warm blush/gold tones - personal, intimate */
+.path-card--off {
+  border: 1px solid rgba(232, 212, 196, 0.4);
+}
+
 .path-card--off .path-visual {
-  background: linear-gradient(135deg, rgba(247, 243, 237, 0.6) 0%, rgba(232, 212, 196, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(232, 212, 196, 0.35) 0%, rgba(212, 184, 150, 0.2) 100%);
+}
+
+.path-card--off .path-label {
+  color: var(--color-secondary);
+}
+
+.path-card--off .path-cta {
+  color: var(--color-secondary);
+}
+
+/* ON-ERA: Sage green tones - collective, grounding */
+.path-card--on {
+  border: 1px solid rgba(181, 196, 177, 0.4);
 }
 
 .path-card--on .path-visual {
-  background: linear-gradient(135deg, rgba(181, 196, 177, 0.15) 0%, rgba(247, 243, 237, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(181, 196, 177, 0.35) 0%, rgba(181, 196, 177, 0.15) 100%);
+}
+
+.path-card--on .path-label {
+  color: #8a9f86;
+}
+
+.path-card--on .path-cta {
+  color: #8a9f86;
 }
 
 .path-content {
