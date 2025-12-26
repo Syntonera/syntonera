@@ -10,11 +10,11 @@ useBackgroundTransition()
 const { currentSection, scrollToSection } = useFullpageScroll()
 
 const pillars = [
-  { id: 'cadres', title: 'Cadres inspirants', desc: 'Sublimer chaque expérience par la magie des espaces choisis.', icon: '/pillars/cadres.webp' },
-  { id: 'corps', title: 'Corps & esprit alignés', desc: 'Cultiver l\'harmonie profonde entre corps et esprit.', icon: '/pillars/corps.webp' },
-  { id: 'sens', title: 'Sens éveillés', desc: 'Éveiller les sens pour nourrir la présence et la joie.', icon: '/pillars/sens.webp' },
-  { id: 'instants', title: 'Instants lumineux', desc: 'Inspirer par la passion, le partage et la bienveillance.', icon: '/pillars/instants.webp' },
-  { id: 'harmonie', title: 'Harmonie avec la nature', desc: 'Respecter la Terre par des gestes durables et conscients.', icon: '/pillars/harmonie.webp' }
+  { id: 'cadres', title: 'Cadres inspirants', desc: 'Sublimer chaque expérience par la magie des espaces choisis.', icon: '/pillars/cadres.png' },
+  { id: 'corps', title: 'Corps & esprit alignés', desc: 'Cultiver l\'harmonie profonde entre corps et esprit.', icon: '/pillars/corps.png' },
+  { id: 'sens', title: 'Sens éveillés', desc: 'Éveiller les sens pour nourrir la présence et la joie.', icon: '/pillars/sens.png' },
+  { id: 'instants', title: 'Instants lumineux', desc: 'Inspirer par la passion, le partage et la bienveillance.', icon: '/pillars/instants.png' },
+  { id: 'harmonie', title: 'Harmonie avec la nature', desc: 'Respecter la Terre par des gestes durables et conscients.', icon: '/pillars/harmonie.png' }
 ]
 </script>
 
@@ -34,10 +34,10 @@ const pillars = [
             avec une approche <em>holistique</em>.
           </p>
           <div class="hero-actions">
-            <a href="#off-era" class="btn btn-accent">
+            <a href="https://www.syntonera.fr/off-era" class="btn btn-accent">
               Rejoindre une soirée
             </a>
-            <a href="#on-era" class="btn btn-secondary">
+            <a href="https://www.syntonera.fr/on-era" class="btn btn-secondary">
               Organiser un séminaire
             </a>
           </div>
@@ -98,7 +98,7 @@ const pillars = [
     </section>
 
     <!-- Two Paths -->
-    <section class="section paths fp-section" data-bg-layer="light">
+    <section id="paths" class="section paths fp-section" data-bg-layer="light">
       <div class="container">
         <div class="paths-header reveal">
           <h2 class="paths-title">Deux chemins, <em>une intention</em></h2>
@@ -110,7 +110,7 @@ const pillars = [
 
         <div class="paths-grid stagger-grid">
 
-          <a href="#on-era" class="path-card path-card--on stagger-item">
+          <a href="https://www.syntonera.fr/on-era" class="path-card path-card--on stagger-item">
             <div class="path-visual">
               <div class="path-shapes path-shapes--on">
                 <span class="shape shape-center"></span>
@@ -133,7 +133,7 @@ const pillars = [
             </div>
           </a>
 
-          <a href="#off-era" class="path-card path-card--off stagger-item">
+          <a href="https://www.syntonera.fr/off-era" class="path-card path-card--off stagger-item">
             <div class="path-visual">
               <div class="path-shapes path-shapes--off">
                 <span class="shape shape-1"></span>
@@ -170,7 +170,7 @@ const pillars = [
               Un pas vers soi. Une pause dans le rythme.
               L'occasion de respirer autrement.
             </p>
-            <a href="#off-era" class="btn btn-accent btn-lg">
+            <a href="#paths" class="btn btn-accent btn-lg">
               Commencer le voyage
             </a>
           </div>

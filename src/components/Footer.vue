@@ -14,8 +14,8 @@ const currentYear = new Date().getFullYear()
         </div>
 
         <nav class="footer-nav">
-          <a href="#off-era">OFF-ERA</a>
-          <a href="#on-era">ON-ERA</a>
+          <a href="https://www.syntonera.fr/off-era">OFF-ERA</a>
+          <a href="https://www.syntonera.fr/on-era">ON-ERA</a>
           <a href="mailto:contact@syntonera.fr">Contact</a>
         </nav>
 
