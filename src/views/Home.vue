@@ -563,14 +563,12 @@ const pillars = [
   border-radius: var(--radius-xl);
   overflow: hidden;
   text-decoration: none;
-  transition: all var(--transition-gentle);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(168, 146, 125, 0.08);
-  contain: layout style paint;
-  transform: translateZ(0);
 }
 
 .path-card:hover {
-  transform: translateY(-8px) translateZ(0);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-medium), 0 20px 60px rgba(0, 0, 0, 0.06);
 }
 
@@ -594,54 +592,87 @@ const pillars = [
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transform: translateZ(0);
-  will-change: transform;
 }
 
-@media (max-width: 640px) {
-  .path-visual {
-    height: 160px;
-  }
-}
-
-/* Mobile: Horizontal compact cards */
+/* Mobile: Compact vertical cards - both visible on screen */
 @media (max-width: 768px) {
   .path-card {
-    flex-direction: row;
-    align-items: stretch;
+    flex-direction: column;
   }
 
   .path-visual {
-    width: 130px;
-    min-width: 130px;
-    height: auto;
-    min-height: 140px;
-    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    height: 80px;
+    min-height: 80px;
   }
 
+  /* Simplified shapes for mobile - only 2 per card, always animating */
   .path-shapes--off,
   .path-shapes--on {
     width: 100px;
-    height: 100px;
+    height: 60px;
   }
 
-  .path-shapes--off .shape-1 { width: 50px; height: 50px; }
-  .path-shapes--off .shape-2 { width: 35px; height: 35px; }
-  .path-shapes--off .shape-3 { width: 30px; height: 30px; }
-  .path-shapes--off .shape-4 { width: 20px; height: 20px; }
+  /* OFF-ERA: show only 2 shapes, smaller */
+  .path-shapes--off .shape-1 {
+    width: 40px;
+    height: 40px;
+    top: 5%;
+    left: 15%;
+    animation-play-state: running;
+    animation-duration: 12s;
+  }
+  .path-shapes--off .shape-2 {
+    width: 30px;
+    height: 30px;
+    top: 20%;
+    right: 15%;
+    animation-play-state: running;
+    animation-duration: 15s;
+  }
+  .path-shapes--off .shape-3,
+  .path-shapes--off .shape-4 {
+    display: none;
+  }
 
-  .path-shapes--on .shape-center { width: 16px; height: 16px; }
-  .path-shapes--on .shape-orbit-1 { width: 50px; height: 50px; }
-  .path-shapes--on .shape-orbit-2 { width: 85px; height: 85px; }
-  .path-shapes--on .shape-dot { width: 10px; height: 10px; }
+  /* ON-ERA: center + orbit + 3 dots, all closer together */
+  .path-shapes--on .shape-center {
+    width: 12px;
+    height: 12px;
+  }
+  .path-shapes--on .shape-orbit-1 {
+    width: 40px;
+    height: 40px;
+  }
+  .path-shapes--on .shape-orbit-2 {
+    width: 60px;
+    height: 60px;
+  }
+  .path-shapes--on .shape-dot {
+    width: 8px;
+    height: 8px;
+    animation-play-state: running;
+    animation-duration: 18s;
+  }
+  /* Reposition dots: left, top, right */
+  .path-shapes--on .shape-dot-1 {
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .path-shapes--on .shape-dot-2 {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+  }
+  .path-shapes--on .shape-dot-3 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
 
   .path-content {
-    padding: 1.25rem;
-    text-align: left;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 1rem 1.25rem 1.25rem;
+    text-align: center;
   }
 
   .path-label {
@@ -650,18 +681,22 @@ const pillars = [
   }
 
   .path-name {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.35rem;
   }
 
   .path-essence {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.5;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .path-cta {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -670,24 +705,12 @@ const pillars = [
   position: relative;
   width: 160px;
   height: 160px;
-  transform: translateZ(0);
 }
 
 .path-shapes--off .shape {
   position: absolute;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
   animation-play-state: paused;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  overflow: hidden;
-}
-
-/* Mobile: always animate since no hover */
-@media (max-width: 768px) {
-  .path-shapes--off .shape {
-    animation-play-state: running;
-  }
 }
 
 .path-shapes--off .shape-1 {
@@ -731,7 +754,6 @@ const pillars = [
   position: relative;
   width: 160px;
   height: 160px;
-  transform: translateZ(0);
 }
 
 .path-shapes--on .shape-center {
@@ -742,9 +764,7 @@ const pillars = [
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
   background: #7a9576;
-  overflow: hidden;
 }
 
 .path-shapes--on .shape-orbit {
@@ -753,7 +773,6 @@ const pillars = [
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  -webkit-border-radius: 50%;
   border: 1px dashed rgba(138, 159, 134, 0.4);
 }
 
@@ -772,22 +791,8 @@ const pillars = [
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
   animation-play-state: paused;
   transition: all var(--transition-gentle);
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow: hidden;
-}
-
-/* Mobile: always animate since no hover */
-@media (max-width: 768px) {
-  .path-shapes--on .shape-dot {
-    animation-play-state: running;
-  }
 }
 
 .path-shapes--on .shape-dot-1 {
@@ -849,12 +854,6 @@ const pillars = [
 .path-content {
   padding: 2rem 2.5rem 2.5rem;
   text-align: center;
-}
-
-@media (max-width: 640px) {
-  .path-content {
-    padding: 1.5rem 1.5rem 2rem;
-  }
 }
 
 .path-label {
