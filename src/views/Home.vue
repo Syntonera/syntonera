@@ -448,6 +448,48 @@ const pillars = [
   font-weight: 300;
 }
 
+/* Definition section mobile */
+@media (max-width: 768px) {
+  .definition-content {
+    padding: 0 1rem;
+  }
+
+  .definition-word {
+    font-size: 2.25rem;
+  }
+
+  .definition-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .definition-origin {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .origin-item {
+    flex: 1;
+    text-align: center;
+  }
+
+  .origin-word {
+    font-size: 0.95rem;
+  }
+
+  .origin-meaning {
+    font-size: 0.75rem;
+    max-width: none;
+  }
+
+  .origin-separator {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+}
+
 /* ========================================
    PATHS SECTION
    ======================================== */
@@ -490,9 +532,27 @@ const pillars = [
 }
 
 @media (max-width: 768px) {
+  .paths {
+    padding: 2.5rem 0;
+  }
+
+  .paths-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .paths-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .paths-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
   .paths-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
@@ -505,10 +565,12 @@ const pillars = [
   text-decoration: none;
   transition: all var(--transition-gentle);
   border: 1px solid rgba(168, 146, 125, 0.08);
+  contain: layout style paint;
+  transform: translateZ(0);
 }
 
 .path-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
   box-shadow: var(--shadow-medium), 0 20px 60px rgba(0, 0, 0, 0.06);
 }
 
@@ -532,6 +594,8 @@ const pillars = [
   justify-content: center;
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 @media (max-width: 640px) {
@@ -540,17 +604,90 @@ const pillars = [
   }
 }
 
+/* Mobile: Horizontal compact cards */
+@media (max-width: 768px) {
+  .path-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .path-visual {
+    width: 130px;
+    min-width: 130px;
+    height: auto;
+    min-height: 140px;
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+  }
+
+  .path-shapes--off,
+  .path-shapes--on {
+    width: 100px;
+    height: 100px;
+  }
+
+  .path-shapes--off .shape-1 { width: 50px; height: 50px; }
+  .path-shapes--off .shape-2 { width: 35px; height: 35px; }
+  .path-shapes--off .shape-3 { width: 30px; height: 30px; }
+  .path-shapes--off .shape-4 { width: 20px; height: 20px; }
+
+  .path-shapes--on .shape-center { width: 16px; height: 16px; }
+  .path-shapes--on .shape-orbit-1 { width: 50px; height: 50px; }
+  .path-shapes--on .shape-orbit-2 { width: 85px; height: 85px; }
+  .path-shapes--on .shape-dot { width: 10px; height: 10px; }
+
+  .path-content {
+    padding: 1.25rem;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .path-label {
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .path-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .path-essence {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .path-cta {
+    font-size: 0.8rem;
+  }
+}
+
 /* OFF-ERA shapes - organic, flowing */
 .path-shapes--off {
   position: relative;
   width: 160px;
   height: 160px;
+  transform: translateZ(0);
 }
 
 .path-shapes--off .shape {
   position: absolute;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   animation-play-state: paused;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  overflow: hidden;
+}
+
+/* Mobile: always animate since no hover */
+@media (max-width: 768px) {
+  .path-shapes--off .shape {
+    animation-play-state: running;
+  }
 }
 
 .path-shapes--off .shape-1 {
@@ -594,6 +731,7 @@ const pillars = [
   position: relative;
   width: 160px;
   height: 160px;
+  transform: translateZ(0);
 }
 
 .path-shapes--on .shape-center {
@@ -604,7 +742,9 @@ const pillars = [
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   background: #7a9576;
+  overflow: hidden;
 }
 
 .path-shapes--on .shape-orbit {
@@ -613,6 +753,7 @@ const pillars = [
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   border: 1px dashed rgba(138, 159, 134, 0.4);
 }
 
@@ -631,8 +772,22 @@ const pillars = [
   width: 16px;
   height: 16px;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   animation-play-state: paused;
   transition: all var(--transition-gentle);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Mobile: always animate since no hover */
+@media (max-width: 768px) {
+  .path-shapes--on .shape-dot {
+    animation-play-state: running;
+  }
 }
 
 .path-shapes--on .shape-dot-1 {
@@ -790,5 +945,26 @@ const pillars = [
   font-style: italic;
   color: var(--color-secondary);
   letter-spacing: 0.02em;
+}
+
+/* Closing section mobile */
+@media (max-width: 768px) {
+  .closing-invitation {
+    margin-bottom: 2rem;
+  }
+
+  .closing-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .closing-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .closing-signature p {
+    font-size: 1.25rem;
+  }
 }
 </style>

@@ -25,16 +25,31 @@ export function useBackgroundTransition() {
 
   const initBackgroundTransition = () => {
     const sections = document.querySelectorAll('[data-bg-layer]')
+    const sectionsArray = Array.from(sections)
 
-    sections.forEach((section) => {
+    sections.forEach((section, index) => {
       const layerName = section.dataset.bgLayer
 
       const trigger = ScrollTrigger.create({
         trigger: section,
-        start: 'top 60%',
-        end: 'bottom 40%',
+        start: 'top center',
+        end: 'bottom center',
         onEnter: () => activateLayer(layerName),
-        onEnterBack: () => activateLayer(layerName)
+        onEnterBack: () => activateLayer(layerName),
+        onLeave: () => {
+          // Activate next section's layer when leaving downward
+          const nextSection = sectionsArray[index + 1]
+          if (nextSection) {
+            activateLayer(nextSection.dataset.bgLayer)
+          }
+        },
+        onLeaveBack: () => {
+          // Activate previous section's layer when leaving upward
+          const prevSection = sectionsArray[index - 1]
+          if (prevSection) {
+            activateLayer(prevSection.dataset.bgLayer)
+          }
+        }
       })
 
       triggers.push(trigger)
