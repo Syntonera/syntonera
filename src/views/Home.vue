@@ -592,6 +592,7 @@ const pillars = [
   justify-content: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 /* Mobile: Compact vertical cards - both visible on screen */
@@ -610,33 +611,40 @@ const pillars = [
   .path-shapes--on {
     width: 100px;
     height: 60px;
+    isolation: isolate;
   }
 
-  /* OFF-ERA: static shapes, no animation */
-  .path-shapes--off .shape {
-    animation: none;
+  /* Force shapes to stay on GPU layer */
+  .path-shapes--off .shape,
+  .path-shapes--on .shape-dot,
+  .path-shapes--on .shape-center {
+    will-change: transform;
+    backface-visibility: hidden;
   }
+
+  /* OFF-ERA: show only 2 shapes, smaller */
   .path-shapes--off .shape-1 {
-    width: 35px;
-    height: 35px;
-    top: 10%;
-    left: 20%;
+    width: 40px;
+    height: 40px;
+    top: 5%;
+    left: 15%;
+    animation-play-state: running;
+    animation-duration: 12s;
   }
   .path-shapes--off .shape-2 {
-    width: 25px;
-    height: 25px;
-    top: 25%;
-    right: 25%;
+    width: 30px;
+    height: 30px;
+    top: 20%;
+    right: 15%;
+    animation-play-state: running;
+    animation-duration: 15s;
   }
   .path-shapes--off .shape-3,
   .path-shapes--off .shape-4 {
     display: none;
   }
 
-  /* ON-ERA: static shapes, no animation */
-  .path-shapes--on .shape-dot {
-    animation: none;
-  }
+  /* ON-ERA: center + orbit + 3 dots, all closer together */
   .path-shapes--on .shape-center {
     width: 12px;
     height: 12px;
@@ -646,26 +654,29 @@ const pillars = [
     height: 40px;
   }
   .path-shapes--on .shape-orbit-2 {
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
   }
   .path-shapes--on .shape-dot {
     width: 8px;
     height: 8px;
+    animation-play-state: running;
+    animation-duration: 18s;
   }
+  /* Reposition dots: left, top, right */
   .path-shapes--on .shape-dot-1 {
-    top: 5%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
   }
   .path-shapes--on .shape-dot-2 {
     top: 50%;
-    right: 10%;
+    right: 5%;
     transform: translateY(-50%);
   }
   .path-shapes--on .shape-dot-3 {
     top: 50%;
-    left: 10%;
+    left: 5%;
     transform: translateY(-50%);
   }
 
@@ -686,12 +697,8 @@ const pillars = [
 
   .path-essence {
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.45;
     margin-bottom: 0.5rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   .path-cta {
