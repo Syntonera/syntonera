@@ -38,7 +38,6 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .section-header {
@@ -56,9 +55,15 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   overflow: hidden;
   position: relative;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.fp-section > .container {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Mobile: normal scrolling */
@@ -66,7 +71,7 @@ html {
   .fp-section {
     height: auto;
     min-height: auto;
-    padding: 4rem 0;
+    padding: 5rem 0 3rem;
     overflow: visible;
   }
 }

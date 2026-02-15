@@ -70,7 +70,7 @@ const pillars = [
         </div>
 
         <div class="pillars-cta">
-          <a href="https://www.syntonera.fr/nos-engagements-" class="btn btn-secondary">
+          <a href="https://www.syntonera.fr/nos-engagements-" class="btn btn-accent">
             Découvrir nos engagements
           </a>
         </div>
@@ -118,8 +118,13 @@ const pillars = [
 
           <a href="https://www.syntonera.fr/on-era" class="path-card path-card--on stagger-item">
             <div class="path-visual">
-              <div class="path-wave" style="filter: url(#wave)">
-                <img src="/gradient-on.jpg" alt="" class="path-bg" />
+              <img src="/gradient-on.jpg" alt="" class="path-bg" />
+              <div class="path-shapes path-shapes--on">
+                <svg class="shape shape-center" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#7a9576"/></svg>
+                <svg class="shape shape-orbit shape-orbit-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="none" stroke="rgba(138, 159, 134, 0.4)" stroke-width="2" stroke-dasharray="6,6"/></svg>
+                <svg class="shape shape-dot shape-dot-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(181, 196, 177, 0.9)"/></svg>
+                <svg class="shape shape-dot shape-dot-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(138, 159, 134, 0.8)"/></svg>
+                <svg class="shape shape-dot shape-dot-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(165, 183, 161, 0.75)"/></svg>
               </div>
             </div>
             <div class="path-content">
@@ -136,8 +141,12 @@ const pillars = [
 
           <a href="https://www.syntonera.fr/off-era" class="path-card path-card--off stagger-item">
             <div class="path-visual">
-              <div class="path-wave" style="filter: url(#wave)">
-                <img src="/gradient-off.jpg" alt="" class="path-bg" />
+              <img src="/gradient-off.jpg" alt="" class="path-bg" />
+              <div class="path-shapes path-shapes--off">
+                <svg class="shape shape-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(232, 212, 196, 0.5)"/></svg>
+                <svg class="shape shape-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(212, 184, 150, 0.45)"/></svg>
+                <svg class="shape shape-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(168, 146, 125, 0.35)"/></svg>
+                <svg class="shape shape-4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(212, 184, 150, 0.3)"/></svg>
               </div>
             </div>
             <div class="path-content">
@@ -197,7 +206,6 @@ const pillars = [
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
@@ -206,6 +214,7 @@ const pillars = [
   z-index: 1;
   text-align: center;
   max-width: 750px;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 
@@ -221,7 +230,7 @@ const pillars = [
 
 .hero-title em {
   font-style: italic;
-  color: var(--color-secondary);
+  color: #AB998C;
 }
 
 .hero-subtitle {
@@ -579,35 +588,108 @@ const pillars = [
   transform: translateX(4px);
 }
 
+.path-card:hover .path-shapes--off .shape {
+  animation-play-state: running;
+}
+
+.path-card:hover .path-shapes--on .shape-dot {
+  animation-play-state: running;
+}
+
 .path-visual {
-  height: 220px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
 }
 
-.path-wave {
-  position: absolute;
-  top: -8%;
-  left: -8%;
-  width: 116%;
-  height: 116%;
-}
-
 .path-bg {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
-/* Mobile */
+.path-shapes {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: Compact vertical cards */
 @media (max-width: 768px) {
   .path-card {
     flex-direction: column;
   }
 
   .path-visual {
-    height: 120px;
+    height: 80px;
+    min-height: 80px;
+  }
+
+  .path-shapes--off,
+  .path-shapes--on {
+    width: 100px;
+    height: 60px;
+    isolation: isolate;
+  }
+
+  .path-shapes--off .shape-1 {
+    width: 40px;
+    height: 40px;
+    top: 5%;
+    left: 15%;
+    animation-play-state: running;
+    animation-duration: 12s;
+  }
+  .path-shapes--off .shape-2 {
+    width: 30px;
+    height: 30px;
+    top: 20%;
+    right: 15%;
+    animation-play-state: running;
+    animation-duration: 15s;
+  }
+  .path-shapes--off .shape-3,
+  .path-shapes--off .shape-4 {
+    display: none;
+  }
+
+  .path-shapes--on .shape-center {
+    width: 12px;
+    height: 12px;
+  }
+  .path-shapes--on .shape-orbit-1 {
+    width: 40px;
+    height: 40px;
+  }
+  .path-shapes--on .shape-orbit-2 {
+    width: 60px;
+    height: 60px;
+  }
+  .path-shapes--on .shape-dot {
+    width: 8px;
+    height: 8px;
+    animation-play-state: running;
+    animation-duration: 18s;
+  }
+  .path-shapes--on .shape-dot-1 {
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .path-shapes--on .shape-dot-2 {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+  }
+  .path-shapes--on .shape-dot-3 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
   }
 
   .path-content {
@@ -636,7 +718,111 @@ const pillars = [
   }
 }
 
-/* Card styles */
+/* OFF-ERA shapes */
+.path-shapes--off {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.path-shapes--off .shape {
+  position: absolute;
+  animation-play-state: paused;
+}
+
+.path-shapes--off .shape-1 {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 10%;
+  animation: off-float1 8s ease-in-out infinite;
+}
+
+.path-shapes--off .shape-2 {
+  width: 60px;
+  height: 60px;
+  top: 40%;
+  right: 5%;
+  animation: off-float2 10s ease-in-out infinite;
+}
+
+.path-shapes--off .shape-3 {
+  width: 50px;
+  height: 50px;
+  bottom: 5%;
+  left: 25%;
+  animation: off-float3 9s ease-in-out infinite;
+}
+
+.path-shapes--off .shape-4 {
+  width: 35px;
+  height: 35px;
+  top: 25%;
+  right: 25%;
+  animation: off-float4 7s ease-in-out infinite;
+}
+
+/* ON-ERA shapes */
+.path-shapes--on {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.path-shapes--on .shape-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+}
+
+.path-shapes--on .shape-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.path-shapes--on .shape-orbit-1 {
+  width: 80px;
+  height: 80px;
+}
+
+.path-shapes--on .shape-orbit-2 {
+  width: 130px;
+  height: 130px;
+}
+
+.path-shapes--on .shape-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  animation-play-state: paused;
+  transition: all var(--transition-gentle);
+}
+
+.path-shapes--on .shape-dot-1 {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: on-orbit1 12s linear infinite;
+}
+
+.path-shapes--on .shape-dot-2 {
+  bottom: 15%;
+  right: 10%;
+  animation: on-orbit2 15s linear infinite;
+}
+
+.path-shapes--on .shape-dot-3 {
+  bottom: 15%;
+  left: 10%;
+  animation: on-orbit3 10s linear infinite;
+}
+
+/* Card variant styles */
 .path-card--off .path-label {
   color: var(--color-secondary);
 }
@@ -646,11 +832,11 @@ const pillars = [
 }
 
 .path-card--on .path-label {
-  color: var(--color-secondary);
+  color: #8a9f86;
 }
 
 .path-card--on .path-cta {
-  color: var(--color-secondary);
+  color: #8a9f86;
 }
 
 .path-content {
