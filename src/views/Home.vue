@@ -35,10 +35,10 @@ const pillars = [
           </p>
           <div class="hero-actions">
             <a href="https://www.syntonera.fr/off-era" class="btn btn-accent">
-              Rejoindre une soirée
+              Découvrir nos soirées
             </a>
             <a href="https://www.syntonera.fr/on-era" class="btn btn-secondary">
-              Organiser un séminaire
+              Planifier un séminaire
             </a>
           </div>
         </div>
@@ -67,6 +67,12 @@ const pillars = [
             <h3 class="pillar-title">{{ pillar.title }}</h3>
             <p class="pillar-desc">{{ pillar.desc }}</p>
           </div>
+        </div>
+
+        <div class="pillars-cta">
+          <a href="https://www.syntonera.fr/nos-engagements-" class="btn btn-secondary">
+            Découvrir nos engagements
+          </a>
         </div>
       </div>
     </section>
@@ -112,17 +118,13 @@ const pillars = [
 
           <a href="https://www.syntonera.fr/on-era" class="path-card path-card--on stagger-item">
             <div class="path-visual">
-              <div class="path-shapes path-shapes--on">
-                <svg class="shape shape-center" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#7a9576"/></svg>
-                <svg class="shape shape-orbit shape-orbit-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="none" stroke="rgba(138, 159, 134, 0.4)" stroke-width="2" stroke-dasharray="6,6"/></svg>
-                <svg class="shape shape-dot shape-dot-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(181, 196, 177, 0.9)"/></svg>
-                <svg class="shape shape-dot shape-dot-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(138, 159, 134, 0.8)"/></svg>
-                <svg class="shape shape-dot shape-dot-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(165, 183, 161, 0.75)"/></svg>
+              <div class="path-wave" style="filter: url(#wave)">
+                <img src="/gradient-on.jpg" alt="" class="path-bg" />
               </div>
             </div>
             <div class="path-content">
               <span class="path-label">Pour l'équipe</span>
-              <h3 class="path-name">ON-ERA</h3>
+              <h3 class="path-name">ON <em>era</em></h3>
               <p class="path-essence">
                 Fédérer, inspirer, transformer.
                 Des séminaires sur-mesure qui réinventent
@@ -134,16 +136,13 @@ const pillars = [
 
           <a href="https://www.syntonera.fr/off-era" class="path-card path-card--off stagger-item">
             <div class="path-visual">
-              <div class="path-shapes path-shapes--off">
-                <svg class="shape shape-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(232, 212, 196, 0.5)"/></svg>
-                <svg class="shape shape-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(212, 184, 150, 0.45)"/></svg>
-                <svg class="shape shape-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(168, 146, 125, 0.35)"/></svg>
-                <svg class="shape shape-4" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="rgba(212, 184, 150, 0.3)"/></svg>
+              <div class="path-wave" style="filter: url(#wave)">
+                <img src="/gradient-off.jpg" alt="" class="path-bg" />
               </div>
             </div>
             <div class="path-content">
               <span class="path-label">Pour soi</span>
-              <h3 class="path-name">OFF-ERA</h3>
+              <h3 class="path-name">OFF <em>era</em></h3>
               <p class="path-essence">
                 Lâcher prise, respirer, se reconnecter.
                 Des soirées immersives en petit groupe,
@@ -214,7 +213,7 @@ const pillars = [
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 400;
-  color: var(--color-primary);
+  color: #AB998C;
   margin-bottom: 1.5rem;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -227,7 +226,7 @@ const pillars = [
 
 .hero-subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  color: var(--color-text-light);
+  color: #AB998C;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
@@ -235,7 +234,7 @@ const pillars = [
 .hero-subtitle em {
   font-style: normal;
   font-weight: 500;
-  color: var(--color-secondary);
+  color: #AB998C;
 }
 
 .hero-actions {
@@ -344,7 +343,6 @@ const pillars = [
   height: 100%;
   object-fit: contain;
   transition: transform var(--transition-slow);
-  filter: invert(1);
 }
 
 .pillar-card:hover .pillar-icon {
@@ -363,6 +361,11 @@ const pillars = [
   font-size: 0.9rem;
   color: var(--color-text-light);
   line-height: 1.6;
+}
+
+.pillars-cta {
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 /* ========================================
@@ -500,7 +503,7 @@ const pillars = [
 
 .paths-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .paths-title {
@@ -527,7 +530,7 @@ const pillars = [
 .paths-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  gap: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -576,100 +579,35 @@ const pillars = [
   transform: translateX(4px);
 }
 
-.path-card:hover .path-shapes--off .shape {
-  animation-play-state: running;
-}
-
-.path-card:hover .path-shapes--on .shape-dot {
-  animation-play-state: running;
-}
-
 .path-visual {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 220px;
   position: relative;
   overflow: hidden;
-  isolation: isolate;
-  contain: content;
 }
 
-/* Mobile: Compact vertical cards - both visible on screen */
+.path-wave {
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  width: 116%;
+  height: 116%;
+}
+
+.path-bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .path-card {
     flex-direction: column;
   }
 
   .path-visual {
-    height: 80px;
-    min-height: 80px;
-  }
-
-  /* Simplified shapes for mobile - only 2 per card, always animating */
-  .path-shapes--off,
-  .path-shapes--on {
-    width: 100px;
-    height: 60px;
-    isolation: isolate;
-  }
-
-  /* OFF-ERA: show only 2 shapes, smaller */
-  .path-shapes--off .shape-1 {
-    width: 40px;
-    height: 40px;
-    top: 5%;
-    left: 15%;
-    animation-play-state: running;
-    animation-duration: 12s;
-  }
-  .path-shapes--off .shape-2 {
-    width: 30px;
-    height: 30px;
-    top: 20%;
-    right: 15%;
-    animation-play-state: running;
-    animation-duration: 15s;
-  }
-  .path-shapes--off .shape-3,
-  .path-shapes--off .shape-4 {
-    display: none;
-  }
-
-  /* ON-ERA: center + orbit + 3 dots, all closer together */
-  .path-shapes--on .shape-center {
-    width: 12px;
-    height: 12px;
-  }
-  .path-shapes--on .shape-orbit-1 {
-    width: 40px;
-    height: 40px;
-  }
-  .path-shapes--on .shape-orbit-2 {
-    width: 60px;
-    height: 60px;
-  }
-  .path-shapes--on .shape-dot {
-    width: 8px;
-    height: 8px;
-    animation-play-state: running;
-    animation-duration: 18s;
-  }
-  /* Reposition dots: left, top, right */
-  .path-shapes--on .shape-dot-1 {
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .path-shapes--on .shape-dot-2 {
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-  }
-  .path-shapes--on .shape-dot-3 {
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
+    height: 120px;
   }
 
   .path-content {
@@ -698,119 +636,7 @@ const pillars = [
   }
 }
 
-/* OFF-ERA shapes - organic, flowing */
-.path-shapes--off {
-  position: relative;
-  width: 160px;
-  height: 160px;
-}
-
-.path-shapes--off .shape {
-  position: absolute;
-  animation-play-state: paused;
-}
-
-.path-shapes--off .shape-1 {
-  width: 80px;
-  height: 80px;
-  top: 10%;
-  left: 10%;
-  animation: off-float1 8s ease-in-out infinite;
-}
-
-.path-shapes--off .shape-2 {
-  width: 60px;
-  height: 60px;
-  top: 40%;
-  right: 5%;
-  animation: off-float2 10s ease-in-out infinite;
-}
-
-.path-shapes--off .shape-3 {
-  width: 50px;
-  height: 50px;
-  bottom: 5%;
-  left: 25%;
-  animation: off-float3 9s ease-in-out infinite;
-}
-
-.path-shapes--off .shape-4 {
-  width: 35px;
-  height: 35px;
-  top: 25%;
-  right: 25%;
-  animation: off-float4 7s ease-in-out infinite;
-}
-
-/* ON-ERA shapes - convergence, team */
-.path-shapes--on {
-  position: relative;
-  width: 160px;
-  height: 160px;
-}
-
-.path-shapes--on .shape-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
-}
-
-.path-shapes--on .shape-orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.path-shapes--on .shape-orbit-1 {
-  width: 80px;
-  height: 80px;
-}
-
-.path-shapes--on .shape-orbit-2 {
-  width: 130px;
-  height: 130px;
-}
-
-.path-shapes--on .shape-dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  animation-play-state: paused;
-  transition: all var(--transition-gentle);
-}
-
-.path-shapes--on .shape-dot-1 {
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: on-orbit1 12s linear infinite;
-}
-
-.path-shapes--on .shape-dot-2 {
-  bottom: 15%;
-  right: 10%;
-  animation: on-orbit2 15s linear infinite;
-}
-
-.path-shapes--on .shape-dot-3 {
-  bottom: 15%;
-  left: 10%;
-  animation: on-orbit3 10s linear infinite;
-}
-
-/* OFF-ERA: Warm blush/gold tones - personal, intimate */
-.path-card--off {
-  border: 1px solid rgba(232, 212, 196, 0.4);
-}
-
-.path-card--off .path-visual {
-  background: linear-gradient(135deg, rgba(232, 212, 196, 0.35) 0%, rgba(212, 184, 150, 0.2) 100%);
-}
-
+/* Card styles */
 .path-card--off .path-label {
   color: var(--color-secondary);
 }
@@ -819,25 +645,16 @@ const pillars = [
   color: var(--color-secondary);
 }
 
-/* ON-ERA: Sage green tones - collective, grounding */
-.path-card--on {
-  border: 1px solid rgba(181, 196, 177, 0.4);
-}
-
-.path-card--on .path-visual {
-  background: linear-gradient(135deg, rgba(181, 196, 177, 0.35) 0%, rgba(181, 196, 177, 0.15) 100%);
-}
-
 .path-card--on .path-label {
-  color: #8a9f86;
+  color: var(--color-secondary);
 }
 
 .path-card--on .path-cta {
-  color: #8a9f86;
+  color: var(--color-secondary);
 }
 
 .path-content {
-  padding: 2rem 2.5rem 2.5rem;
+  padding: 1.5rem 2rem 2rem;
   text-align: center;
 }
 
@@ -858,6 +675,10 @@ const pillars = [
   color: var(--color-primary);
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
+}
+
+.path-name em {
+  font-style: italic;
 }
 
 .path-essence {

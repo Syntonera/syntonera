@@ -8,14 +8,14 @@ const currentYear = new Date().getFullYear()
       <div class="footer-content">
         <div class="footer-brand">
           <a href="/" class="footer-logo">
-            <img src="/logo.webp" alt="Syntonera" class="footer-logo-img" />
+            <img src="/logo.png" alt="Syntonera" class="footer-logo-img" />
           </a>
           <p class="footer-tagline">Respirez. Ralentissez. Reconnectez-vous.</p>
         </div>
 
         <nav class="footer-nav">
-          <a href="https://www.syntonera.fr/off-era">OFF-ERA</a>
-          <a href="https://www.syntonera.fr/on-era">ON-ERA</a>
+          <a href="https://www.syntonera.fr/off-era">Soirée OFF <em>era</em></a>
+          <a href="https://www.syntonera.fr/on-era">Séminaire ON <em>era</em></a>
           <a href="mailto:contact@syntonera.fr">Contact</a>
         </nav>
 
@@ -26,11 +26,18 @@ const currentYear = new Date().getFullYear()
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </a>
-          <a href="https://instagram.com/syntonera" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+          <a href="https://www.instagram.com/syntonera?igsh=MWZpMWc5OWM5NXZqbw%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/syntonera" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
             </svg>
           </a>
         </div>
@@ -39,8 +46,8 @@ const currentYear = new Date().getFullYear()
       <div class="footer-bottom">
         <p>&copy; {{ currentYear }} Syntonera. Tous droits réservés.</p>
         <nav class="footer-legal">
-          <a href="#mentions-legales">Mentions légales</a>
-          <a href="#confidentialite">Confidentialité</a>
+          <a href="https://www.syntonera.fr/mentions-legales">Mentions légales</a>
+          <a href="https://www.syntonera.fr/politique-de-confidentialite">Confidentialité</a>
         </nav>
       </div>
     </div>
@@ -108,6 +115,10 @@ const currentYear = new Date().getFullYear()
   letter-spacing: 0.05em;
   opacity: 0.8;
   transition: opacity var(--transition-base);
+}
+
+.footer-nav a em {
+  font-style: italic;
 }
 
 .footer-nav a:hover {
