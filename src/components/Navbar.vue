@@ -250,7 +250,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(3, 21, 53, 0.92);
+  background: rgba(171, 153, 140, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   opacity: 0;
@@ -285,11 +285,11 @@ onUnmounted(() => {
 
 .menu-label {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0.75rem;
 }
 

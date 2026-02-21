@@ -53,6 +53,30 @@
   box-shadow: var(--shadow-medium);
 }
 
+.btn-outline-blue {
+  background: transparent;
+  color: #031535;
+  border: 1px solid #031535;
+}
+
+.btn-outline-blue:hover {
+  background: #031535;
+  color: #FCFCFC;
+  transform: translateY(-2px);
+}
+
+.btn-brown {
+  background: #AB998C;
+  color: #FCFCFC;
+  border: 1px solid #AB998C;
+}
+
+.btn-brown:hover {
+  background: #EBE4DC;
+  color: #FCFCFC;
+  transform: translateY(-2px);
+}
+
 .btn-lg {
   padding: 1.1rem 2.5rem;
   font-size: 1rem;

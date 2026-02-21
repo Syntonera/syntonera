@@ -34,10 +34,10 @@ const pillars = [
             avec une approche <em>holistique</em>.
           </p>
           <div class="hero-actions">
-            <a href="https://www.syntonera.fr/off-era" class="btn btn-accent">
+            <a href="https://www.syntonera.fr/off-era" class="btn btn-outline-blue">
               Découvrir nos soirées
             </a>
-            <a href="https://www.syntonera.fr/on-era" class="btn btn-secondary">
+            <a href="https://www.syntonera.fr/on-era" class="btn btn-brown">
               Planifier un séminaire
             </a>
           </div>
@@ -70,7 +70,7 @@ const pillars = [
         </div>
 
         <div class="pillars-cta">
-          <a href="https://www.syntonera.fr/nos-engagements-" class="btn btn-accent">
+          <a href="https://www.syntonera.fr/nos-engagements-" class="btn btn-secondary">
             Découvrir nos engagements
           </a>
         </div>
@@ -116,7 +116,7 @@ const pillars = [
 
         <div class="paths-grid stagger-grid">
 
-          <a href="https://www.syntonera.fr/on-era" class="path-card path-card--on stagger-item">
+          <a href="https://www.syntonera.fr/experience-on-era" class="path-card path-card--on stagger-item">
             <div class="path-visual">
               <img src="/gradient-on.jpg" alt="" class="path-bg" />
               <div class="path-shapes path-shapes--on">
@@ -177,7 +177,7 @@ const pillars = [
               Un pas vers soi. Une pause dans le rythme.
               L'occasion de respirer autrement.
             </p>
-            <a href="#paths" class="btn btn-accent btn-lg">
+            <a href="#paths" class="btn btn-secondary btn-lg">
               Commencer le voyage
             </a>
           </div>
@@ -222,7 +222,7 @@ const pillars = [
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 400;
-  color: #AB998C;
+  color: var(--color-primary);
   margin-bottom: 1.5rem;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -230,12 +230,12 @@ const pillars = [
 
 .hero-title em {
   font-style: italic;
-  color: #AB998C;
+  color: var(--color-secondary);
 }
 
 .hero-subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  color: #AB998C;
+  color: var(--color-text);
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
@@ -243,7 +243,7 @@ const pillars = [
 .hero-subtitle em {
   font-style: normal;
   font-weight: 500;
-  color: #AB998C;
+  color: var(--color-secondary);
 }
 
 .hero-actions {
