@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import { useScrollReveal } from '@composables/useScrollReveal'
 import { useFullpageScroll } from '@composables/useFullpageScroll'
 import { useBackgroundTransition } from '@composables/useBackgroundTransition'
@@ -8,6 +9,42 @@ import BackgroundLayers from '@components/BackgroundLayers.vue'
 useScrollReveal()
 useBackgroundTransition()
 const { currentSection, scrollToSection } = useFullpageScroll()
+
+const faqs = [
+  {
+    question: 'Qu\'est-ce que Syntonera ?',
+    answer: 'Syntonera crée des expériences immersives de bien-être en Provence. Que ce soit pour une soirée entre amis ou un séminaire d\'équipe, nous imaginons des moments sur mesure qui invitent à ralentir, se reconnecter et repartir plus léger.'
+  },
+  {
+    question: 'Quelles expériences proposez-vous ?',
+    answer: 'Nous proposons deux formats. OFF era : des soirées bien-être en petit groupe, pensées pour les particuliers qui souhaitent s\'offrir une parenthèse. ON era : des séminaires immersifs pour les équipes, conçus pour fédérer et inspirer autrement.'
+  },
+  {
+    question: 'Où se déroulent les expériences ?',
+    answer: 'En Provence, dans des lieux soigneusement choisis pour leur authenticité et leur sérénité. Chaque cadre est sélectionné pour sublimer l\'expérience et inviter au lâcher-prise.'
+  },
+  {
+    question: 'Quelle est la différence entre ON era et OFF era ?',
+    answer: 'OFF era, c\'est pour soi : des soirées immersives mêlant ateliers créatifs, pratiques douces et dégustations. ON era, c\'est pour l\'équipe : des séminaires sur mesure autour de la cohésion, la créativité, la nature et le ressourcement.'
+  },
+  {
+    question: 'À qui s\'adressent vos expériences ?',
+    answer: 'À toute personne en quête d\'un moment de pause. Les soirées OFF era accueillent les particuliers, seuls ou entre proches. Les séminaires ON era s\'adressent aux petites équipes et entreprises à taille humaine.'
+  },
+  {
+    question: 'Les expériences sont-elles personnalisables ?',
+    answer: 'Oui, chaque expérience est pensée sur mesure. Vous choisissez le format — demi-journée, journée, soirée — les activités parmi nos univers thématiques, et nous adaptons la restauration avec des partenaires locaux.'
+  },
+  {
+    question: 'Comment réserver ou vous contacter ?',
+    answer: 'Écrivez-nous à contact@syntonera.fr ou utilisez le formulaire sur notre page de contact. Nous échangerons ensemble pour imaginer l\'expérience qui vous ressemble.'
+  }
+]
+
+const openFaq = ref(null)
+const toggleFaq = (index) => {
+  openFaq.value = openFaq.value === index ? null : index
+}
 
 const pillars = [
   { id: 'cadres', title: 'Cadres inspirants', desc: 'Sublimer chaque expérience par la magie des espaces choisis.', icon: '/pillars/cadres.png' },
@@ -20,7 +57,7 @@ const pillars = [
 
 <template>
   <div class="home">
-    <SectionDots :section-count="5" />
+    <SectionDots :section-count="6" />
     <BackgroundLayers />
 
     <!-- Hero -->
@@ -184,6 +221,37 @@ const pillars = [
 
           <div class="closing-signature">
             <p>À bientôt, en Provence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq fp-section" data-bg-layer="light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Questions fréquentes</h2>
+          <p class="section-subtitle">
+            Tout ce qu'il faut savoir avant de se lancer.
+          </p>
+        </div>
+
+        <div class="faq-list reveal">
+          <div
+            v-for="(faq, index) in faqs"
+            :key="index"
+            class="faq-item"
+            :class="{ open: openFaq === index }"
+          >
+            <button class="faq-question" @click="toggleFaq(index)">
+              <span>{{ faq.question }}</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>{{ faq.answer }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -956,6 +1024,95 @@ const pillars = [
 
   .closing-signature p {
     font-size: 1.25rem;
+  }
+}
+
+/* ========================================
+   FAQ SECTION
+   ======================================== */
+.faq {
+  background: transparent;
+}
+
+.faq .section-subtitle {
+  max-width: 500px;
+  margin: 1rem auto 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.faq-list {
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(168, 146, 125, 0.15);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(168, 146, 125, 0.15);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: color var(--transition-base);
+}
+
+.faq-question:hover {
+  color: var(--color-secondary);
+}
+
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--color-secondary);
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-bottom: 1.25rem;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 1rem 0;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
   }
 }
 </style>
