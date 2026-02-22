@@ -71,19 +71,19 @@ onUnmounted(() => {
           <div class="menu-group">
             <span class="menu-label">Séminaires</span>
             <div class="menu-links">
-              <a href="https://www.syntonera.fr/experience-on-era" @click="closeMenu">Découvrir</a>
-              <a href="https://www.syntonera.fr/on-era/le-lieu" @click="closeMenu">Le lieu</a>
-              <a href="https://www.syntonera.fr/on-era/a-propos" @click="closeMenu">À propos</a>
-              <a href="https://www.syntonera.fr/experience-on-era-contact" @click="closeMenu">Contact</a>
+              <a href="/experience-on-era" @click="closeMenu">Découvrir</a>
+              <a href="/on-era/le-lieu" @click="closeMenu">Le lieu</a>
+              <a href="/on-era/a-propos" @click="closeMenu">À propos</a>
+              <a href="/experience-on-era-contact" @click="closeMenu">Contact</a>
             </div>
           </div>
           <div class="menu-group">
             <span class="menu-label">Soirées</span>
             <div class="menu-links">
-              <a href="https://www.syntonera.fr/off-era" @click="closeMenu">Découvrir</a>
-              <a href="https://www.syntonera.fr/off-era/le-concept" @click="closeMenu">Le concept</a>
-              <a href="https://www.syntonera.fr/nos-intervenants" @click="closeMenu">Nos intervenants</a>
-              <a href="https://www.syntonera.fr/nos-engagements-" @click="closeMenu">Nos engagements</a>
+              <a href="/off-era" @click="closeMenu">Découvrir</a>
+              <a href="/off-era/le-concept" @click="closeMenu">Le concept</a>
+              <a href="/nos-intervenants" @click="closeMenu">Nos intervenants</a>
+              <a href="/nos-engagements-" @click="closeMenu">Nos engagements</a>
             </div>
           </div>
         </nav>

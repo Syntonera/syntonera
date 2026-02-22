@@ -12,6 +12,14 @@
     <meta property="og:url" content="https://syntonera.fr/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Syntonera">
+    <meta property="og:image" content="https://syntonera.fr/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Syntonera — Là où l'harmonie se vit">
+    <meta name="twitter:description" content="Séminaires bien-être et soirées détente en Provence. Expériences immersives sur mesure pour vos équipes et événements.">
+    <meta name="twitter:image" content="https://syntonera.fr/logo.png">
 
     <link rel="icon" type="image/x-icon" href="/favicon-light.ico" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)">
@@ -19,9 +27,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <title>Syntonera — Là où l'harmonie se vit</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Syntonera",
+      "description": "Séminaires bien-être et soirées détente en Provence. Expériences immersives sur mesure pour vos équipes et événements.",
+      "url": "https://syntonera.fr",
+      "areaServed": "Provence-Alpes-Côte d'Azur",
+      "knowsLanguage": "fr"
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <h1>Syntonera — Là où l'harmonie se vit</h1>
+      <p>Séminaires bien-être et soirées détente en Provence. Expériences immersives sur mesure pour vos équipes et événements.</p>
+      <ul>
+        <li><a href="/off-era">Découvrir nos soirées</a></li>
+        <li><a href="/on-era">Planifier un séminaire</a></li>
+      </ul>
+    </noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

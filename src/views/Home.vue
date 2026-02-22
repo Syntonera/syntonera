@@ -34,10 +34,10 @@ const pillars = [
             avec une approche <em>holistique</em>.
           </p>
           <div class="hero-actions">
-            <a href="https://www.syntonera.fr/off-era" class="btn btn-outline-blue">
+            <a href="/off-era" class="btn btn-outline-blue">
               Découvrir nos soirées
             </a>
-            <a href="https://www.syntonera.fr/on-era" class="btn btn-brown">
+            <a href="/on-era" class="btn btn-brown">
               Planifier un séminaire
             </a>
           </div>
@@ -70,7 +70,7 @@ const pillars = [
         </div>
 
         <div class="pillars-cta">
-          <a href="https://www.syntonera.fr/nos-engagements-" class="btn btn-secondary">
+          <a href="/nos-engagements-" class="btn btn-secondary">
             Découvrir nos engagements
           </a>
         </div>
@@ -116,7 +116,7 @@ const pillars = [
 
         <div class="paths-grid stagger-grid">
 
-          <a href="https://www.syntonera.fr/experience-on-era" class="path-card path-card--on stagger-item">
+          <a href="/experience-on-era" class="path-card path-card--on stagger-item">
             <div class="path-visual">
               <img src="/gradient-on.jpg" alt="" class="path-bg" />
               <div class="path-shapes path-shapes--on">
@@ -139,7 +139,7 @@ const pillars = [
             </div>
           </a>
 
-          <a href="https://www.syntonera.fr/off-era" class="path-card path-card--off stagger-item">
+          <a href="/off-era" class="path-card path-card--off stagger-item">
             <div class="path-visual">
               <img src="/gradient-off.jpg" alt="" class="path-bg" />
               <div class="path-shapes path-shapes--off">

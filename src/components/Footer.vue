@@ -14,8 +14,8 @@ const currentYear = new Date().getFullYear()
         </div>
 
         <nav class="footer-nav">
-          <a href="https://www.syntonera.fr/off-era">Soirée OFF <em>era</em></a>
-          <a href="https://www.syntonera.fr/on-era">Séminaire ON <em>era</em></a>
+          <a href="/off-era">Soirée OFF <em>era</em></a>
+          <a href="/on-era">Séminaire ON <em>era</em></a>
           <a href="mailto:contact@syntonera.fr">Contact</a>
         </nav>
 
@@ -46,8 +46,8 @@ const currentYear = new Date().getFullYear()
       <div class="footer-bottom">
         <p>&copy; {{ currentYear }} Syntonera. Tous droits réservés.</p>
         <nav class="footer-legal">
-          <a href="https://www.syntonera.fr/mentions-legales">Mentions légales</a>
-          <a href="https://www.syntonera.fr/politique-de-confidentialite">Confidentialité</a>
+          <a href="/mentions-legales">Mentions légales</a>
+          <a href="/politique-de-confidentialite">Confidentialité</a>
         </nav>
       </div>
     </div>
