@@ -32,7 +32,7 @@ const faqs = [
     answer: 'Oui, chaque expérience est pensée sur mesure. Vous choisissez le format — demi-journée, journée, soirée — les activités parmi nos univers thématiques, et nous adaptons la restauration avec des partenaires locaux.'
   },
   {
-    question: 'Comment réserver ou vous contacter ?',
+    question: 'Comment réserver ou nous contacter ?',
     answer: 'Écrivez-nous à contact@syntonera.fr ou utilisez le formulaire sur notre page de contact. Nous échangerons ensemble pour imaginer l\'expérience qui vous ressemble.'
   }
 ]
