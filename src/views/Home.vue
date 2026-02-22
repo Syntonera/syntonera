@@ -17,19 +17,15 @@ const faqs = [
   },
   {
     question: 'Quelles expériences proposez-vous ?',
-    answer: 'Nous proposons deux formats. OFF era : des soirées bien-être en petit groupe, pensées pour les particuliers qui souhaitent s\'offrir une parenthèse. ON era : des séminaires immersifs pour les équipes, conçus pour fédérer et inspirer autrement.'
-  },
-  {
-    question: 'Où se déroulent les expériences ?',
-    answer: 'En Provence, dans des lieux soigneusement choisis pour leur authenticité et leur sérénité. Chaque cadre est sélectionné pour sublimer l\'expérience et inviter au lâcher-prise.'
-  },
-  {
-    question: 'Quelle est la différence entre ON era et OFF era ?',
-    answer: 'OFF era, c\'est pour soi : des soirées immersives mêlant ateliers créatifs, pratiques douces et dégustations. ON era, c\'est pour l\'équipe : des séminaires sur mesure autour de la cohésion, la créativité, la nature et le ressourcement.'
+    answer: 'Nous proposons deux formats :<br><strong>OFF era</strong> : des soirées bien-être en petit groupe, pensées pour les particuliers qui souhaitent s\'offrir une parenthèse.<br><strong>ON era</strong> : des séminaires immersifs pour les équipes, conçus pour fédérer et inspirer autrement.'
   },
   {
     question: 'À qui s\'adressent vos expériences ?',
     answer: 'À toute personne en quête d\'un moment de pause. Les soirées OFF era accueillent les particuliers, seuls ou entre proches. Les séminaires ON era s\'adressent aux petites équipes et entreprises à taille humaine.'
+  },
+  {
+    question: 'Où se déroulent les expériences ?',
+    answer: 'En Provence, dans des lieux soigneusement choisis pour leur authenticité et leur sérénité. Chaque cadre est sélectionné pour sublimer l\'expérience et inviter au lâcher-prise.'
   },
   {
     question: 'Les expériences sont-elles personnalisables ?',
@@ -250,7 +246,7 @@ const pillars = [
               </svg>
             </button>
             <div class="faq-answer">
-              <p>{{ faq.answer }}</p>
+              <p v-html="faq.answer"></p>
             </div>
           </div>
         </div>
@@ -1103,6 +1099,11 @@ const pillars = [
   font-size: 0.95rem;
   color: var(--color-text-light);
   line-height: 1.8;
+}
+
+.faq-answer strong {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
