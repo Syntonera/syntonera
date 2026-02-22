@@ -23,6 +23,10 @@
       "destination": "/sitemap.xml"
     },
     {
+      "source": "/og-image.jpg",
+      "destination": "/og-image.jpg"
+    },
+    {
       "source": "/:path*",
       "destination": "https://greyhound-lychee-rsl3.squarespace.com/:path*"
     }
