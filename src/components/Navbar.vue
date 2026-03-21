@@ -71,7 +71,7 @@ onUnmounted(() => {
           <div class="menu-group">
             <span class="menu-label">Séminaires</span>
             <div class="menu-links">
-              <a href="/experience-on-era" @click="closeMenu">Découvrir</a>
+              <a href="/experience-on-era" @click="closeMenu">L'expérience</a>
               <a href="/on-era/le-lieu" @click="closeMenu">Le lieu</a>
               <a href="/on-era/a-propos" @click="closeMenu">À propos</a>
               <a href="/experience-on-era-contact" @click="closeMenu">Contact</a>
@@ -80,10 +80,15 @@ onUnmounted(() => {
           <div class="menu-group">
             <span class="menu-label">Soirées</span>
             <div class="menu-links">
-              <a href="/off-era" @click="closeMenu">Découvrir</a>
+              <a href="/off-era" @click="closeMenu">L'expérience</a>
               <a href="/off-era/le-concept" @click="closeMenu">Le concept</a>
               <a href="/nos-intervenants" @click="closeMenu">Nos intervenants</a>
-              <a href="/nos-engagements-" @click="closeMenu">Nos engagements</a>
+            </div>
+          </div>
+          <div class="menu-group">
+            <span class="menu-label">L'esprit Syntonera</span>
+            <div class="menu-links">
+              <a href="/esprit-syntonera" @click="closeMenu">Découvrir</a>
             </div>
           </div>
         </nav>

@@ -77,6 +77,18 @@
   transform: translateY(-2px);
 }
 
+.btn-outline-brown {
+  background: transparent;
+  color: #031535;
+  border: 1px solid #031535;
+}
+
+.btn-outline-brown:hover {
+  background: #AB998C;
+  color: #FCFCFC;
+  transform: translateY(-2px);
+}
+
 .btn-lg {
   padding: 1.1rem 2.5rem;
   font-size: 1rem;

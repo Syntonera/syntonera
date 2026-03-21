@@ -12,28 +12,24 @@ const { currentSection, scrollToSection } = useFullpageScroll()
 
 const faqs = [
   {
-    question: 'Qu\'est-ce que Syntonera ?',
-    answer: 'Syntonera crée des expériences immersives de bien-être en Provence. Que ce soit pour une soirée entre amis ou un séminaire d\'équipe, nous imaginons des moments sur mesure qui invitent à ralentir, se reconnecter et repartir plus léger.'
+    question: 'Que veut dire "Syntonera" ?',
+    answer: 'Syntonera réunit l\'idée de syntonie (être en harmonie avec soi et son environnement) et celle d\'era (une nouvelle étape).<br><br>C\'est une invitation à participer à des événements bien-être conçus pour ralentir, se recentrer et cultiver une harmonie intérieure durable.'
   },
   {
-    question: 'Quelles expériences proposez-vous ?',
-    answer: 'Nous proposons deux formats :<br><strong>OFF era</strong> : des soirées bien-être en petit groupe, pensées pour les particuliers qui souhaitent s\'offrir une parenthèse.<br><strong>ON era</strong> : des séminaires immersifs pour les équipes, conçus pour fédérer et inspirer autrement.'
+    question: 'Quelle est l\'approche de Syntonera ?',
+    answer: 'Notre approche est holistique : corps, esprit, émotions, lien aux autres et à l\'environnement. Chaque expérience offre une parenthèse hors du temps, conçue pour vous permettre de relâcher la pression et d\'être présent à vous-même.'
   },
   {
-    question: 'À qui s\'adressent vos expériences ?',
-    answer: 'À toute personne en quête d\'un moment de pause. Les soirées OFF era accueillent les particuliers, seuls ou entre proches. Les séminaires ON era s\'adressent aux petites équipes et entreprises à taille humaine.'
+    question: 'Qui organise et anime les expériences ?',
+    answer: 'Syntonera collabore avec des intervenants sélectionnés pour leur capacité à créer un véritable cocon propice au lâcher-prise ainsi que leur expertise : artistes, facilitateurs, et partenaires culinaires.'
   },
   {
-    question: 'Où se déroulent les expériences ?',
-    answer: 'En Provence, dans des lieux soigneusement choisis pour leur authenticité et leur sérénité. Chaque cadre est sélectionné pour sublimer l\'expérience et inviter au lâcher-prise.'
+    question: 'Où ont lieu les événements Syntonera ?',
+    answer: 'Les expériences se déroulent dans des lieux choisis pour favoriser la présence (calme, nature, esthétique, confort). La localisation exacte, l\'accès et les infos pratiques sont indiqués sur chaque page d\'événement.'
   },
   {
-    question: 'Les expériences sont-elles personnalisables ?',
-    answer: 'Oui, chaque expérience est pensée sur mesure. Vous choisissez le format — demi-journée, journée, soirée — les activités parmi nos univers thématiques, et nous adaptons la restauration avec des partenaires locaux.'
-  },
-  {
-    question: 'Comment réserver ou nous contacter ?',
-    answer: 'Écrivez-nous à contact@syntonera.fr ou utilisez le formulaire sur notre page de contact. Nous échangerons ensemble pour imaginer l\'expérience qui vous ressemble.'
+    question: 'Comment proposer mon profil pour intervenir lors d\'un événement Syntonera ?',
+    answer: 'Ce qui rend nos événements uniques, c\'est l\'énergie et le cœur que chaque intervenant y apporte. Si notre approche vous parle et que vous souhaitez partager vos compétences au sein d\'une expérience Syntonera, nous vous invitons à nous envoyer votre profil via <a href="/experience-on-era-contact">notre espace contact</a> ou directement à <a href="mailto:contact@syntonera.fr">contact@syntonera.fr</a>. Nous prenons le temps de lire chaque message avec attention et revenons vers vous si une belle collaboration semble possible.'
   }
 ]
 
@@ -70,8 +66,8 @@ const pillars = [
             <a href="/off-era" class="btn btn-outline-blue">
               Découvrir nos soirées
             </a>
-            <a href="/on-era" class="btn btn-brown">
-              Planifier un séminaire
+            <a href="/experience-on-era" class="btn btn-brown">
+              Découvrir nos séminaires
             </a>
           </div>
         </div>
@@ -103,8 +99,8 @@ const pillars = [
         </div>
 
         <div class="pillars-cta">
-          <a href="/nos-engagements-" class="btn btn-secondary">
-            Découvrir nos engagements
+          <a href="/esprit-syntonera" class="btn btn-secondary">
+            Découvrir notre approche
           </a>
         </div>
       </div>
@@ -164,9 +160,7 @@ const pillars = [
               <span class="path-label">Pour l'équipe</span>
               <h3 class="path-name">ON <em>era</em></h3>
               <p class="path-essence">
-                Fédérer, inspirer, transformer.
-                Des séminaires sur-mesure qui réinventent
-                la cohésion en entreprise.
+                Rassembler, fédérer, ressourcer. Des séminaires sur-mesure à La Roque-d'Anthéron pour renforcer la cohésion de vos équipes et nourrir le bien-être de chacun.
               </p>
               <span class="path-cta">Imaginer votre événement</span>
             </div>
@@ -186,9 +180,7 @@ const pillars = [
               <span class="path-label">Pour soi</span>
               <h3 class="path-name">OFF <em>era</em></h3>
               <p class="path-essence">
-                Lâcher prise, respirer, se reconnecter.
-                Des soirées immersives en petit groupe,
-                au cœur de la Provence.
+                Lâcher prise, s'inspirer, se régénérer. Des soirées immersives qui placent votre bien-être au cœur de l'expérience.
               </p>
               <span class="path-cta">Découvrir l'expérience</span>
             </div>
@@ -249,6 +241,11 @@ const pillars = [
               <p v-html="faq.answer"></p>
             </div>
           </div>
+        </div>
+
+        <div class="faq-ctas reveal">
+          <a href="/faq-soirees" class="btn btn-outline-blue">FAQ Soirées Bien-Être</a>
+          <a href="/faq-seminaires" class="btn btn-outline-brown">FAQ Séminaires Entreprises</a>
         </div>
       </div>
     </section>
@@ -1104,6 +1101,26 @@ const pillars = [
 .faq-answer strong {
   color: var(--color-primary);
   font-weight: 600;
+}
+
+.faq-answer :deep(a) {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+.faq-answer :deep(a:hover) {
+  color: var(--color-primary);
+}
+
+.faq-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
